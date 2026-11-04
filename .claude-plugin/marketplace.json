@@ -1,0 +1,66 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "my-skills",
+  "description": "Rodrigo's personal collection of Claude Code skills and plugins",
+  "owner": {
+    "name": "rodrigorey16"
+  },
+  "plugins": [
+    {
+      "name": "superpowers",
+      "description": "Development workflow skills from obra/superpowers: brainstorming, planning, TDD, systematic debugging, code review, parallel agents, git worktrees and verification before completion.",
+      "source": "./.claude/skills",
+      "strict": false,
+      "category": "development",
+      "skills": [
+        "./brainstorming",
+        "./diagnosing-superpowers",
+        "./dispatching-parallel-agents",
+        "./executing-plans",
+        "./finishing-a-development-branch",
+        "./receiving-code-review",
+        "./requesting-code-review",
+        "./subagent-driven-development",
+        "./systematic-debugging",
+        "./test-driven-development",
+        "./using-git-worktrees",
+        "./using-superpowers",
+        "./verification-before-completion",
+        "./writing-plans",
+        "./writing-skills"
+      ],
+      "homepage": "https://github.com/obra/superpowers"
+    },
+    {
+      "name": "alpaca-trading",
+      "description": "Alpaca skills from alpacahq/alpaca-skills: historical backtests and paper trading through the API, the CLI or the MCP server.",
+      "source": "./.claude/skills",
+      "strict": false,
+      "category": "finance",
+      "skills": [
+        "./alpaca-trading-backtest",
+        "./alpaca-trading-paper-trading",
+        "./alpaca-trading-paper-trading-cli",
+        "./alpaca-trading-paper-trading-mcp"
+      ],
+      "homepage": "https://github.com/alpacahq/alpaca-skills"
+    },
+    {
+      "name": "youtube-gemini",
+      "description": "Ask Gemini questions about a public YouTube video (summary, outline, quotes, timestamps).",
+      "source": "./.claude/skills",
+      "strict": false,
+      "category": "productivity",
+      "skills": [
+        "./youtube-gemini"
+      ]
+    },
+    {
+      "name": "code-review",
+      "description": "Anthropic's automated pull request review: parallel specialized agents with confidence-based filtering. Vendored from anthropics/claude-plugins-official.",
+      "source": "./plugins/code-review",
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review"
+    }
+  ]
+}
