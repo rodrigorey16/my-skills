@@ -11,6 +11,8 @@ In Claude Code:
 /plugin install superpowers@my-skills
 ```
 
+This repo is **private**: Claude Code clones the marketplace with your git credentials, so every machine or cloud environment that loads it needs read access to `rodrigorey16/my-skills` (in a Claude Code cloud environment, add this repo to the environment's repositories), or make the repo public. Without access the marketplace fails to load and none of its plugins are installed.
+
 Or have a repo pick them up automatically by adding this to its `.claude/settings.json`:
 
 ```json
@@ -31,12 +33,19 @@ Or have a repo pick them up automatically by adding this to its `.claude/setting
 
 | Plugin | What it does | Source |
 | --- | --- | --- |
-| `superpowers` | Brainstorming, planning, TDD, debugging, code review, parallel agents, worktrees, verification | [obra/superpowers](https://github.com/obra/superpowers) |
+| `superpowers` | Brainstorming, planning, TDD, debugging, code review, parallel agents, worktrees, verification, plus the upstream SessionStart hook | [obra/superpowers](https://github.com/obra/superpowers), pinned commit |
 | `alpaca-trading` | Alpaca backtests and paper trading (API, CLI, MCP) | [alpacahq/alpaca-skills](https://github.com/alpacahq/alpaca-skills) |
 | `youtube-gemini` | Ask Gemini about a public YouTube video | this repo |
-| `code-review` | `/code-review` PR review with parallel agents and confidence filtering | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review) (Apache-2.0) |
+| `code-review` | `/code-review:code-review` PR review with parallel agents and confidence filtering | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review), pinned commit |
 
-Skills live in `.claude/skills/`, so sessions in this repo load them directly as well.
+`superpowers` and `code-review` install straight from their upstream repos at a pinned commit; bump the `sha` in `.claude-plugin/marketplace.json` to update them. `alpaca-trading` and `youtube-gemini` are served from `.claude/skills/`; bump their `version` when those skills change.
+
+Sessions in this repo load the skills in `.claude/skills/` directly. The `code-review` plugin only appears after installing it from the marketplace.
+
+### code-review notes
+
+- Claude Code has a built-in `/code-review` skill with the same name. Run the plugin as `/code-review:code-review`.
+- It uses the `gh` CLI. `--comment` posts inline comments through `mcp__github_inline_comment__create_inline_comment`, which only exists in the claude-code-action GitHub Action; elsewhere, run it without `--comment` (terminal output only).
 
 ## Not included here
 

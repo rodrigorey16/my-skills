@@ -8,27 +8,13 @@
   "plugins": [
     {
       "name": "superpowers",
-      "description": "Development workflow skills from obra/superpowers: brainstorming, planning, TDD, systematic debugging, code review, parallel agents, git worktrees and verification before completion.",
-      "source": "./.claude/skills",
-      "strict": false,
+      "description": "Development workflow skills from obra/superpowers (brainstorming, planning, TDD, systematic debugging, code review, parallel agents, git worktrees, verification) plus its SessionStart bootstrap hook.",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers",
+        "sha": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
       "category": "development",
-      "skills": [
-        "./brainstorming",
-        "./diagnosing-superpowers",
-        "./dispatching-parallel-agents",
-        "./executing-plans",
-        "./finishing-a-development-branch",
-        "./receiving-code-review",
-        "./requesting-code-review",
-        "./subagent-driven-development",
-        "./systematic-debugging",
-        "./test-driven-development",
-        "./using-git-worktrees",
-        "./using-superpowers",
-        "./verification-before-completion",
-        "./writing-plans",
-        "./writing-skills"
-      ],
       "homepage": "https://github.com/obra/superpowers"
     },
     {
@@ -43,7 +29,8 @@
         "./alpaca-trading-paper-trading-cli",
         "./alpaca-trading-paper-trading-mcp"
       ],
-      "homepage": "https://github.com/alpacahq/alpaca-skills"
+      "homepage": "https://github.com/alpacahq/alpaca-skills",
+      "version": "1.0.0"
     },
     {
       "name": "youtube-gemini",
@@ -53,12 +40,18 @@
       "category": "productivity",
       "skills": [
         "./youtube-gemini"
-      ]
+      ],
+      "version": "1.0.0"
     },
     {
       "name": "code-review",
-      "description": "Anthropic's automated pull request review: parallel specialized agents with confidence-based filtering. Vendored from anthropics/claude-plugins-official.",
-      "source": "./plugins/code-review",
+      "description": "Anthropic's automated pull request review (/code-review:code-review): parallel specialized agents with confidence-based filtering, from anthropics/claude-plugins-official.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/code-review",
+        "sha": "fa4eb54397ee2faccb6940512a19c017cb1337f3"
+      },
       "category": "development",
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review"
     }
