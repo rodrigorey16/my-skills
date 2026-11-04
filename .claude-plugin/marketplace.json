@@ -1,0 +1,59 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "my-skills",
+  "description": "Rodrigo's personal collection of Claude Code skills and plugins",
+  "owner": {
+    "name": "rodrigorey16"
+  },
+  "plugins": [
+    {
+      "name": "superpowers",
+      "description": "Development workflow skills from obra/superpowers (brainstorming, planning, TDD, systematic debugging, code review, parallel agents, git worktrees, verification) plus its SessionStart bootstrap hook.",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers",
+        "sha": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "category": "development",
+      "homepage": "https://github.com/obra/superpowers"
+    },
+    {
+      "name": "alpaca-trading",
+      "description": "Alpaca skills from alpacahq/alpaca-skills: historical backtests and paper trading through the API, the CLI or the MCP server.",
+      "source": "./.claude/skills",
+      "strict": false,
+      "category": "finance",
+      "skills": [
+        "./alpaca-trading-backtest",
+        "./alpaca-trading-paper-trading",
+        "./alpaca-trading-paper-trading-cli",
+        "./alpaca-trading-paper-trading-mcp"
+      ],
+      "homepage": "https://github.com/alpacahq/alpaca-skills",
+      "version": "1.0.0"
+    },
+    {
+      "name": "youtube-gemini",
+      "description": "Ask Gemini questions about a public YouTube video (summary, outline, quotes, timestamps).",
+      "source": "./.claude/skills",
+      "strict": false,
+      "category": "productivity",
+      "skills": [
+        "./youtube-gemini"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "name": "code-review",
+      "description": "Anthropic's automated pull request review (/code-review:code-review): parallel specialized agents with confidence-based filtering, from anthropics/claude-plugins-official.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/code-review",
+        "sha": "fa4eb54397ee2faccb6940512a19c017cb1337f3"
+      },
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review"
+    }
+  ]
+}
