@@ -11,8 +11,6 @@ In Claude Code:
 /plugin install superpowers@my-skills
 ```
 
-This repo is **private**: Claude Code clones the marketplace with your git credentials, so every machine or cloud environment that loads it needs read access to `rodrigorey16/my-skills` (in a Claude Code cloud environment, add this repo to the environment's repositories), or make the repo public. Without access the marketplace fails to load and none of its plugins are installed.
-
 Or have a repo pick them up automatically by adding this to its `.claude/settings.json`:
 
 ```json
